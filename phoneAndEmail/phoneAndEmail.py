@@ -10,10 +10,16 @@ phoneRegex = re.compile(r'''(
     (\s|-|\.) #must have a seperator
     (\d{4}) #must have last 4 digits
     (\s*(ext|x|ext.)\s*(\d{2,5}))? # may have an extension
-    )''', re.VERBOSE)
+    )''', re.X) # X stands for VERBOSE which allows you to break the Regex into multiple lines
 
-# TODO: Create email regex.
+emailRegex = re.compile(r'''(
+    [a-zA-Z0-9._%+-]+ # username
+    @ # @ symbol
+    [a-zA-Z0-9.-]+ #domain name
+    (\.[a-zA-Z{2,4}) #dot-something what's a 4 dot-something?
+    )''', re.X)
 
 # TODO: Find matches in clipboard text.
+
 
 # TODO: Copy results to the clipboard.
